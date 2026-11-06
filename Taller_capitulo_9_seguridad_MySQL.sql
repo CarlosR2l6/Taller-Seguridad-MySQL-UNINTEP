@@ -316,4 +316,20 @@ WHERE rental_id = 1;
 
 ROLLBACK;
 
+-- =====================================================
+-- 20. PARTE F: LIMPIEZA DEL LABORATORIO
 
+-- Ahora se procede a eliminar los usuarios, roles y
+-- la vista creados durante el desarrollo de las pruebas.
+-- =====================================================
+
+DROP USER IF EXISTS
+'analista_bi'@'localhost',
+'cajero'@'localhost',
+'soporte'@'localhost';
+
+DROP ROLE IF EXISTS
+'rol_lectura',
+'rol_cajero';
+
+DROP VIEW IF EXISTS sakila.v_clientes_publico;
